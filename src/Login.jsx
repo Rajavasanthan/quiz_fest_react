@@ -7,6 +7,7 @@ function Login() {
         <div className="row col-lg-12 d-flex ">
           <div className="container-fluid col-lg-6 " style={{ backgroundColor: "dodgerblue", height: "100vh", width: "100vh" }}>
             <div className="row">
+
               <div className="container " style={{ marginLeft: "200px", marginTop: "300px", color: "white" }} >
                 <span><h2><i>Test Your Knowledge</i></h2></span>
                 <span><h2><i>Challange Your Limits</i></h2></span>
@@ -21,9 +22,12 @@ function Login() {
           <div className="container-fluid col-lg-6" style={{ backgroundColor: "hsl(194, 30%, 86%)", height: "100vh", width: "100vh" }}>
             <div className="row col-lg-12" style={{ height: "100vh", width: "100vh" }}>
               <div className="d-flex  row " >
-                <div className="">
-                  <img src="src/assets/Q.png" alt="" style={{ height: "100px", width: "100px" }} />
-                  <div className="" style={{ marginLeft: "160px", width: "80vh", color: "black" }}><h3><strong>Quiz Fest</strong></h3> </div>
+                <div className="container ">
+                  <div className="d-flex">
+                    <img src="src/assets/Q.png" alt="" style={{ height: "100px", width: "100px" }} />
+                  </div>
+                  <div className="" style={{ marginLeft: "160px", width: "80vh", color: "black" }}><h3><strong>Quiz Fest</strong></h3>
+                  </div>
                 </div>
                 <div className="d-flex p-2 align-items-end" style={{ marginLeft: "160px", width: "80vh", color: "black" }}><h4><strong>Login</strong></h4></div>
               </div>
