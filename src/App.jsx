@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./sb-admin-2.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import Login from "./Login";
 import DashboardLayout from "./DashboardLayout";
 import AllQuizes from "./AllQuizes";
@@ -8,6 +8,7 @@ import Quiz from "./Quiz";
 import CreateQuestion from "./CreateQuestion";
 import QuizLinks from "./QuizLinks";
 import ViewLink from "./ViewLink";
+import StudentQuiz from "./StudentQuiz";
 function App() {
   return (
     <>
@@ -24,7 +25,7 @@ function App() {
             <Route path="quiz-links" element={<QuizLinks />} />
             <Route path="view-link/:linkId" element={<ViewLink />} />
           </Route>
-          <Route path="/take-quiz/:quizId"/>
+          <Route path="/take-quiz/:quizId" element={<StudentQuiz />} />
         </Routes>
       </BrowserRouter>
     </>

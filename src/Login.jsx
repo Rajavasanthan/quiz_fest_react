@@ -33,14 +33,14 @@ function Login() {
               </div>
               <div>
                 <div className="container row col-lg-6" style={{ marginLeft: "130px" }}>
-                  <div class="form-outline w-100">
-                    <label class="form-label" for="input1">Email</label>
-                    <input type="text" id="input1" class="form-control" />
+                  <div className="form-outline w-100">
+                    <label className="form-label">Email</label>
+                    <input type="text" id="input1" className="form-control" />
                   </div>
-                  <div class="form-outline w-100">
-                    <label class="form-label" for="input1">Password</label>
-                    <input type="text" id="input1" class="form-control" />
-                    <button className="btn btn-primary" style={{ marginTop: "10px" }}>Login</button>
+                  <div className="form-outline w-100">
+                    <label className="form-label">Password</label>
+                    <input type="text" id="input1" className="form-control" />
+                    <Link to={"/dashboard/list-all-quizes"} className="btn btn-primary" style={{ marginTop: "10px" }}>Login</Link>
                     <Link className="d-flex" style={{ marginTop: "10px" }}>Register</Link>
                   </div>
                 </div>
