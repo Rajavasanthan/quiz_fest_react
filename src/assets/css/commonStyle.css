@@ -1,0 +1,19 @@
+.headingOne{
+    color: #383838;
+    font-size: 30px;
+}
+.btnPrimary{
+    font-size: 19px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    background: #4368d6;
+    color: #fff;
+    padding: 8px 20px;
+    font-weight: 400;
+    box-shadow: 0 1px 4px #919191;
+}
+.btnPrimary:hover{
+    background: #2a51c4;
+    color: #fff;
+}
