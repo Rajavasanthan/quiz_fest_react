@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./sb-admin-2.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from "./Login";
 import DashboardLayout from "./DashboardLayout";
 import AllQuizes from "./AllQuizes";

@@ -1,0 +1,54 @@
+@import "./commonStyle.css";
+
+.questionListBlock{
+    background: #fff;
+    color: #212529;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 7px 1px rgb(228 228 228);
+}
+.questionListBlock.correct{
+    border-top: 5px solid #5cb85c;
+}
+.questionListBlock.incorrect{
+    border-top: 5px solid #d9534f;
+}
+.questionListBlock .hrTitle{
+    margin: 20px 0;
+    background: #ccc;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+    content: "";
+}
+.questionListBlock .option{
+    margin: 15px 0;
+}
+.questionListBlock .option p{
+     margin-bottom: 0;
+}
+.questionListBlock .option .chooseOption{
+    margin-top: 3px;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #ededed;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.chooseOption .imgIcon{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+}
+.chooseOption.correct .imgIcon.correct{
+    background: url(../img/check.png);
+    background-size: contain;
+}
+.chooseOption.wrong .imgIcon.wrong{
+    background: url(../img/wrong.png);
+    background-size: contain;
+}
