@@ -25,6 +25,13 @@ function ViewLink() {
     return useRep;
   };
 
+  let findWholeCorrect = (questionId) => {
+    let question = quizLink?.response?.find(
+      (resp) => resp.questionId === questionId
+    );
+    return question;
+  }
+
   useEffect(() => {
     getLink();
   }, []);
@@ -37,7 +44,7 @@ function ViewLink() {
       <div className="quizQAndADisplayBlock">
         {quizLink?.quizId?.questions?.map((question, index) => {
           return (
-            <div key={index} className="questionListBlock p-3 incorrect">
+            <div key={index} className={`questionListBlock p-3 ${findWholeCorrect(question._id).isCorrect ? 'correct' : 'incorrect'}`}>
               <div className="questionContent d-flex">
                 <span className="mr-10px">1.</span>
                 <div className="d-flex">
