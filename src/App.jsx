@@ -9,13 +9,18 @@ import CreateQuestion from "./CreateQuestion";
 import QuizLinks from "./QuizLinks";
 import ViewLink from "./ViewLink";
 import StudentQuiz from "./StudentQuiz";
+import StudentLogin from "./StudentLogin";
+import Qusten from "./Qusten";
+import Mark from "./Mark";
+import Register from "./Register"
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/dashboard" element={<DashboardLayout />}>
+           <Route path="/register" element={<Register />}/>
+            <Route path="/dashboard" element={<DashboardLayout />}>
             <Route path="list-all-quizes" element={<AllQuizes />} />
             <Route path="view-quiz/:quizId" element={<Quiz />} />
             <Route
@@ -26,6 +31,10 @@ function App() {
             <Route path="view-link/:linkId" element={<ViewLink />} />
           </Route>
           <Route path="/take-quiz/:quizId" element={<StudentQuiz />} />
+          <Route path="/studlog" element={<StudentLogin />} />
+         <Route path="/studqus" element={<Qusten/>}/>
+        <Route path="/final" element={<Mark/>}/>
+
         </Routes>
       </BrowserRouter>
     </>
