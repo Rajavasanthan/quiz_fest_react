@@ -3,21 +3,35 @@ import { PencilIcon, EyeIcon, TrashIcon, LinkIcon } from "lucide-react";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { config } from "./constants";
 
 function AllQuizzes() {
-  const quizzes = [
-    { title: "Maths", numberOfQuestions: 20 },
-    { title: "Tamil", numberOfQuestions: 10 },
-  ];
-  const navigate = useNavigate()
+  const [quizes, setQuizes] = useState([]);
+  const [title, setTitle] = useState("");
+  const navigate = useNavigate();
+
+  let getQuiz = async () => {
+    const allQuizeRes = await axios.get(`${config.api}/quiz/get-all-quiz`);
+    setQuizes(allQuizeRes.data);
+  };
+
+  useEffect(() => {
+    getQuiz();
+  }, []);
 
   const [show, setShow] = useState(false);
 
-  const handleClose = () => {
-    setShow(false);
-    navigate("/dashboard/view-quiz/1")
-  }
+  const handleClose = async () => {
+    try {
+      const quizResp = await axios.post(`${config.api}/quiz/create`, { title });
+      setShow(false);
+      navigate(`/dashboard/view-quiz/${quizResp.data.quizId}`);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const handleShow = () => setShow(true);
 
   return (
@@ -46,24 +60,31 @@ function AllQuizzes() {
             </tr>
           </thead>
           <tbody>
-            {quizzes.map((quiz, index) => (
+            {quizes.map((quiz, index) => (
               <tr key={index} className="border-b">
                 <td className="p-4">{quiz.title}</td>
-                <td className="p-4">{quiz.numberOfQuestions}</td>
+                <td className="p-4">{quiz.questions.length}</td>
                 <td className="p-4">
                   <div className="flex space-x-2">
                     <Link className="p-1">
                       <PencilIcon size={20} />
                     </Link>
-                    <Link className="p-1">
+                    <Link
+                      to={`/dashboard/view-quiz/${quiz._id}`}
+                      className="p-1"
+                    >
                       <EyeIcon size={20} />
                     </Link>
                     <Link className="p-1">
                       <TrashIcon size={20} />
                     </Link>
-                    <Link className="p-1">
+                    <a
+                      href={`${config.domain}/take-quiz/${quiz._id}`}
+                      target="_blank"
+                      className="p-1"
+                    >
                       <LinkIcon size={20} />
-                    </Link>
+                    </a>
                   </div>
                 </td>
               </tr>
@@ -83,6 +104,8 @@ function AllQuizzes() {
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Quiz Title</Form.Label>
               <Form.Control
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
                 type="email"
                 placeholder="Quiz Title"
                 autoFocus
