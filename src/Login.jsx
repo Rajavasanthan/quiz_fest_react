@@ -41,7 +41,7 @@ function Login() {
                     <label className="form-label">Password</label>
                     <input type="text" id="input1" className="form-control" />
                     <Link to={"/dashboard/list-all-quizes"} className="btn btn-primary" style={{ marginTop: "10px" }}>Login</Link>
-                    <Link className="d-flex" style={{ marginTop: "10px" }}>Register</Link>
+                    <Link className="nav-link d-flex" to={"/register"}>Register</Link>
                   </div>
                 </div>
               </div>

@@ -51,7 +51,7 @@ function AllQuizzes() {
                 <td className="p-4">{quiz.title}</td>
                 <td className="p-4">{quiz.numberOfQuestions}</td>
                 <td className="p-4">
-                  <div className="flex space-x-2">
+                  <div className="d-flex space-x-2">
                     <Link className="p-1">
                       <PencilIcon size={20} />
                     </Link>
@@ -61,9 +61,10 @@ function AllQuizzes() {
                     <Link className="p-1">
                       <TrashIcon size={20} />
                     </Link>
-                    <Link className="p-1">
-                      <LinkIcon size={20} />
+                    <Link className="p-1 nav-link" to={"/studlog"}>
+                    <LinkIcon size={20} />
                     </Link>
+                    
                   </div>
                 </td>
               </tr>

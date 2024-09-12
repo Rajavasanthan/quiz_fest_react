@@ -1,8 +1,12 @@
+import { Link } from "react-router-dom"
 
-function StudentQuiz() {
+function Login() {
   return (
-    <div>StudentQuiz</div>
+    <>
+    <div>Login</div>
+    <Link to={"/studlog"}>Login</Link>
+    </>
   )
 }
 
-export default StudentQuiz
+export default Login
